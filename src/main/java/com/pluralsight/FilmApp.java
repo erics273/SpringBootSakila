@@ -63,10 +63,6 @@ public class FilmApp implements CommandLineRunner {
                     System.out.print("Enter film title: ");
                     String title = scanner.nextLine();
 
-                    // Ask the user for the film's category.
-                    System.out.print("Enter film category: ");
-                    String category = scanner.nextLine();
-
                     // Ask the user for the film's rental rate.
                     System.out.print("Enter film rental rate: ");
                     double rentalRate = Double.parseDouble(scanner.nextLine());
@@ -74,7 +70,6 @@ public class FilmApp implements CommandLineRunner {
                     // Create a new Film object and set its data.
                     Film newFilm = new Film();
                     newFilm.setTitle(title);
-                    newFilm.setCategory(category);
                     newFilm.setRentalRate(rentalRate);
 
                     // Add the new film to the DAO (which stores it in memory).
