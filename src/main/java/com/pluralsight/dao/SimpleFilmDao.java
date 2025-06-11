@@ -27,9 +27,9 @@ public class SimpleFilmDao implements FilmDao {
         films = new ArrayList<>();
 
         // Let's add some sample films so the list is not empty when the app starts.
-        films.add(new Film(nextId++, "The Matrix", "Action", 2.99));
-        films.add(new Film(nextId++, "Finding Nemo", "Animation", 1.99));
-        films.add(new Film(nextId++, "Titanic", "Drama", 3.99));
+        films.add(new Film(nextId++, "The Matrix", 2.99));
+        films.add(new Film(nextId++, "Finding Nemo", 1.99));
+        films.add(new Film(nextId++, "Titanic", 3.99));
     }
 
     // This method is required because we are implementing the FilmDao interface.

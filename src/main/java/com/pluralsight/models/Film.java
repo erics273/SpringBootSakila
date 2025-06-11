@@ -13,9 +13,6 @@ public class Film {
     // The title (name) of the film.
     private String title;
 
-    // The category of the film (like Action, Comedy, Drama, etc.).
-    private String category;
-
     // The rental rate (how much it costs to rent the film).
     private double rentalRate;
 
@@ -25,10 +22,9 @@ public class Film {
 
     // This is a "constructor with parameters."
     // It lets us create a Film and set all its data at once.
-    public Film(int filmId, String title, String category, double rentalRate) {
+    public Film(int filmId, String title, double rentalRate) {
         this.filmId = filmId;
         this.title = title;
-        this.category = category;
         this.rentalRate = rentalRate;
     }
 
@@ -53,15 +49,6 @@ public class Film {
         this.title = title;
     }
 
-    // Get or set the film's category.
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     // Get or set the film's rental rate.
     public double getRentalRate() {
         return rentalRate;
@@ -79,7 +66,6 @@ public class Film {
         return "Film{" +
                 "filmId=" + filmId +
                 ", title='" + title + '\'' +
-                ", category='" + category + '\'' +
                 ", rentalRate=" + rentalRate +
                 '}';
     }

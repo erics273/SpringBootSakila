@@ -3,6 +3,7 @@ package com.pluralsight;
 import com.pluralsight.dao.FilmDao;
 import com.pluralsight.models.Film;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,8 @@ public class FilmApp implements CommandLineRunner {
     // We are asking Spring to "inject" a FilmDao here.
     // This is called Dependency Injection — Spring will give us the correct FilmDao automatically.
     @Autowired
+    //use the JdbcFilmDao dao instead of the SimpleFilmDao
+    @Qualifier("jdbcFilmDao")
     private FilmDao filmDao;
 
     // This is the main method that will run when the app starts.
@@ -63,10 +66,6 @@ public class FilmApp implements CommandLineRunner {
                     System.out.print("Enter film title: ");
                     String title = scanner.nextLine();
 
-                    // Ask the user for the film's category.
-                    System.out.print("Enter film category: ");
-                    String category = scanner.nextLine();
-
                     // Ask the user for the film's rental rate.
                     System.out.print("Enter film rental rate: ");
                     double rentalRate = Double.parseDouble(scanner.nextLine());
@@ -74,7 +73,6 @@ public class FilmApp implements CommandLineRunner {
                     // Create a new Film object and set its data.
                     Film newFilm = new Film();
                     newFilm.setTitle(title);
-                    newFilm.setCategory(category);
                     newFilm.setRentalRate(rentalRate);
 
                     // Add the new film to the DAO (which stores it in memory).
