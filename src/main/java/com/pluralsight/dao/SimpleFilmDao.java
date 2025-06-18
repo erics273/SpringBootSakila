@@ -35,12 +35,13 @@ public class SimpleFilmDao implements FilmDao {
     // This method is required because we are implementing the FilmDao interface.
     // It allows us to add a new Film to the list.
     @Override
-    public void add(Film film) {
+    public Film add(Film film) {
         // We assign the next unique ID to the film.
         film.setFilmId(nextId++);
 
         // We add the film to the list.
         films.add(film);
+        return film;
     }
 
     // This method is required because we are implementing the FilmDao interface.
